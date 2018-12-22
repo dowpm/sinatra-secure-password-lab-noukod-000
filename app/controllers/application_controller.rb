@@ -58,7 +58,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/deposits' do
-    if
+    user = User.find(session[:user_id])
+    user.balance = (user.balance + params[:deposit].to_i)
   end
 
   post '/withdrawals' do
