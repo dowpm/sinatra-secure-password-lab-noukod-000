@@ -65,7 +65,14 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/withdrawals' do
-
+    user = User.find(session[:user_id])
+    withdraw = params[:withdraw]
+    if user.balance >= withdraw
+      user.balance = (user.balance - withdraw)
+      redirect '/account'
+    else
+      @msg = "You don't have enough money"
+      redirect '/account'
   end
 
   helpers do
