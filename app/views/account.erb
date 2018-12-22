@@ -3,9 +3,11 @@
 <p>We are currently working on your account.</p>
 <p> Your balance is $<%= @user.balance %> </p>
 
-<form method="post" action="/balance" >
+<form method="post" action="/deposits" >
   Deposit<input type="number" name="deposit">
   <input type="submit" value="deposits">
+</form >
+<form method="post" action="/withdrawals">
   withdraw<input type="number" name="withdraw">
   <input type="submit" value="withdrawals">
 </form>
