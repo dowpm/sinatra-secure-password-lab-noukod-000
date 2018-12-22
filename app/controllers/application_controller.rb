@@ -69,6 +69,7 @@ class ApplicationController < Sinatra::Base
     withdraw = params[:withdraw].to_i
     if user.balance >= withdraw
       user.balance = (user.balance - withdraw)
+      user.save
       redirect '/account'
     else
       redirect '/account'
