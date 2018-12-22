@@ -73,6 +73,7 @@ class ApplicationController < Sinatra::Base
     else
       @msg = "You don't have enough money"
       redirect '/account'
+    end
   end
 
   helpers do
