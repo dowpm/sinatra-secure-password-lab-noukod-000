@@ -71,7 +71,6 @@ class ApplicationController < Sinatra::Base
       user.balance = (user.balance - withdraw)
       redirect '/account'
     else
-      @msg = "You don't have enough money"
       redirect '/account'
     end
   end
