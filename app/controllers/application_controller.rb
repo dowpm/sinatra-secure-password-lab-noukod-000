@@ -66,7 +66,7 @@ class ApplicationController < Sinatra::Base
 
   post '/withdrawals' do
     user = User.find(session[:user_id])
-    withdraw = params[:withdraw]
+    withdraw = params[:withdraw].to_i
     if user.balance >= withdraw
       user.balance = (user.balance - withdraw)
       redirect '/account'
