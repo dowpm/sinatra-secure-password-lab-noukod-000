@@ -2,7 +2,9 @@
 <h2> <%= @user.username %>
 <p>We are currently working on your account.</p>
 <p> Your balance is $<%= @user.balance %> </p>
-<h2>withdrawals failed "<%= @mgs %>"</h2>
+<% if @msg %>
+  <h2>withdrawals failed "<%= @mgs %>"</h2>
+<% end %>
 <form method="post" action="/deposits" >
   Deposit<input type="number" name="deposit">
   <input type="submit" value="deposits">
