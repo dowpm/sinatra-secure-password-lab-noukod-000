@@ -65,7 +65,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/withdrawals' do
-    
+
   end
 
   helpers do
